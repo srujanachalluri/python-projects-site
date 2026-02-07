@@ -1,3 +1,38 @@
+/* The  code is to maintain the same view point across the mobile device like color */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    /* your gradient */
+}
+
+body {
+    min-height: 100vh;
+    /* ensures full viewport height */
+    width: 100vw;
+    /* full viewport width */
+    overflow-x: hidden;
+    /* prevents horizontal scroll */
+}
+
+.container,
+.folder-grid,
+#new-updates,
+.contact-section {
+    background: transparent;
+    /* or same gradient color */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* The above code is to maintain the same view point across the mobile device like color
+
 /* Fonts & colors */
 body {
     font-family: 'Poppins', sans-serif;
@@ -41,7 +76,7 @@ body {
 /* Folder Card */
 .folder-card {
     position: relative;
-    height: 360px;
+    height: 365px;
     /* Bigger card */
     border-radius: 18px;
     overflow: hidden;
@@ -67,6 +102,7 @@ body {
     margin-bottom: 0.5rem;
     font-weight: 700;
     font-size: 1.3rem;
+    color: #00bcd4;
 }
 
 .folder-link h3 {
@@ -124,7 +160,7 @@ body {
     font-size: 1.4rem;
     font-weight: 600;
     text-align: center;
-    color: #111827;
+    color: #00bcd4;
     pointer-events: none;
     /* 👈 key trick */
 }
@@ -134,7 +170,7 @@ body {
 .btn-view {
     margin-top: 0.8rem;
     padding: 0.4rem 1rem;
-    background: #3b82f6;
+    background: #00bcd4;
     border: none;
     border-radius: 6px;
     color: white;
@@ -144,7 +180,7 @@ body {
 }
 
 .btn-view:hover {
-    background: #2563eb;
+    background: #00bcd4;
 }
 
 /* New Update Section */
@@ -242,12 +278,12 @@ body {
 .contact-container {
 
     text-align: center;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .contact-text {
     max-width: 800px;
-    margin: 0 auto 20px;
+    margin: 0 auto 18px;
 }
 
 /* Social Links */
@@ -327,6 +363,13 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .your-text-class {
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
     .contact-container {
         flex-direction: column;
     }
@@ -337,9 +380,9 @@ body {
     body {
         font-size: 16px;
     }
+}
 
-
-
+@media (max-width: 768px) {
     .card {
         width: 100%;
         margin-bottom: 15px;
@@ -350,5 +393,41 @@ body {
     .folder-grid {
         grid-template-columns: 1fr;
         gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    #header .container {
+        flex-direction: column;
+        /* stack title and nav vertically */
+        align-items: center;
+        /* center both title and nav */
+        padding: 1rem;
+    }
+
+    #header .logo {
+        margin-bottom: 1rem;
+        /* space below title/logo */
+    }
+
+    #nav ul {
+        flex-direction: row;
+        /* keep nav items horizontal */
+        gap: 1rem;
+        white-space: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 0;
+        padding: 0;
+    }
+
+    #nav ul li {
+        flex: 0 0 auto;
+    }
+
+    #nav ul li a {
+        display: inline-block;
+        padding: 0.75rem 1rem;
+        white-space: nowrap;
     }
 }
